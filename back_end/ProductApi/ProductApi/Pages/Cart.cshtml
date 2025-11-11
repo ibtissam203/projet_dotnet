@@ -1,0 +1,244 @@
+﻿@page
+@model ProductApi.Pages.CartModel
+
+@section Styles {
+    <style>
+        .cart-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            background: white;
+        }
+
+        .cart-item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1.5rem;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ec407a;
+            margin: 0.5rem 0;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: #f8bbd9;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #f44336;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .cart-summary {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .btn-checkout {
+            background: #f8bbd9;
+            border: none;
+            color: #c2185b;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+            .btn-checkout:hover {
+                background: #f48fb1;
+            }
+    </style>
+}
+
+<div class="cart-container">
+    <h1 class="mb-4"><i class="bi bi-cart3 me-2"></i>Mon Panier</h1>
+    <!--Panier avec Articles-->
+    <div id="cartItems">
+        <!-- Les articles du panier seront chargés ici -->
+    </div>
+    <!--Panier Vide-->
+    <div id="emptyCart" class="empty-cart" style="display: none;">
+        <i class="bi bi-cart-x display-1 text-muted"></i>
+        <h3 class="text-muted">Votre panier est vide</h3>
+        <p>Découvrez nos produits et ajoutez-les à votre panier !</p>
+        <a href="/" class="btn btn-admin-primary">
+            <i class="bi bi-arrow-left me-2"></i>Continuer mes achats
+        </a>
+    </div>
+    
+    <div id="cartSummary" class="cart-summary" style="display: none;">
+        <h4>Récapitulatif</h4>
+        <div class="d-flex justify-content-between mb-2">
+            <span>Sous-total:</span>
+            <span id="subtotal">0,00 €</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <span>Livraison:</span>
+            <span>Gratuite</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold fs-5">
+            <span>Total:</span>
+            <span id="total">0,00 €</span>
+        </div>
+
+        <button class="btn-checkout" onclick="proceedToCheckout()">
+            <i class="bi bi-lock-fill me-2"></i>Procéder au paiement
+        </button>
+
+        <div class="mt-3 text-center">
+            <a href="/" class="text-muted">
+                <i class="bi bi-arrow-left me-1"></i>Continuer mes achats
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/cart.js"></script>
+    <script>
+        
+        function loadCart() {
+            //Récupère toutes les données du panier : produits, total, état vide ou non.
+            const cartData = cartManager.getCartData();
+            const cartItems = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartSummary = document.getElementById('cartSummary');
+
+            if (cartData.isEmpty) {
+                cartItems.innerHTML = '';
+                emptyCart.style.display = 'block';
+                cartSummary.style.display = 'none';
+                return;
+            }
+
+            emptyCart.style.display = 'none';
+            cartSummary.style.display = 'block';
+
+            // Si le panier contient des produits
+            cartItems.innerHTML = cartData.items.map(item => `
+                <div class="cart-item" data-product-id="${item.id}">
+                    <img src="${item.image}"
+                         class="cart-item-image"
+                         alt="${item.name}"
+                         onerror="this.src='/images/products/default-product.jpg'">
+
+                    <div class="cart-item-details">
+                        <h5 class="mb-1">${item.name}</h5>
+                        <div class="cart-item-price">${item.price.toFixed(2)} €</div>
+
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">
+                                <i class="bi bi-dash"></i>
+                            </button>
+                            <input type="number"
+                                   class="quantity-input"
+                                   value="${item.quantity}"
+                                   min="1"
+                                   max="99"
+                                   onchange="updateQuantity(${item.id}, parseInt(this.value))">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="remove-btn" onclick="removeFromCart(${item.id})">
+                        <i class="bi bi-trash"></i> Supprimer
+                    </button>
+                </div>
+            `).join('');
+
+            updateCartSummary();
+        }
+
+        function updateQuantity(productId, quantity) {
+            cartManager.updateQuantity(productId, quantity);
+            loadCart(); // Recharger l'affichage
+        }
+
+        function removeFromCart(productId) {
+            cartManager.removeFromCart(productId);
+            loadCart(); // Recharger l'affichage
+        }
+
+        function updateCartSummary() {
+            const cartData = cartManager.getCartData();
+            document.getElementById('subtotal').textContent = cartData.totalPrice.toFixed(2) + ' €';
+            document.getElementById('total').textContent = cartData.totalPrice.toFixed(2) + ' €';
+        }
+
+        function proceedToCheckout() {
+            const cartData = cartManager.getCartData();
+            if (cartData.isEmpty) {
+                cartManager.showNotification('Votre panier est vide', 'error');
+                return;
+            }
+
+            if (confirm('Voulez-vous procéder à la commande ?')) {
+                window.location.href = '/Auth/Login?returnUrl=/Checkout';
+            }
+        }
+
+        // Initialiser le panier au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCart();
+
+            // Écouter les mises à jour du panier depuis d'autres pages
+            window.addEventListener('cartUpdated', function() {
+                loadCart();
+            });
+        });
+    </script>
+}

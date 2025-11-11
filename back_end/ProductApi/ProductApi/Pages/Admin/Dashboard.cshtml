@@ -1,0 +1,282 @@
+﻿@page
+@model ProductApi.Pages.Admin.DashboardModel
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/admin-dashboard.css" />
+    <style>
+        .navbar {
+            display: none !important;
+        }
+
+        .container {
+            max-width: none !important;
+            padding: 0 !important;
+        }
+
+        /* Styles améliorés pour les images */
+        .product-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .no-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9ecef;
+            color: #6c757d;
+            border-radius: 8px;
+        }
+
+            .no-image i {
+                font-size: 3rem;
+            }
+
+        /* Assurer que les images se chargent correctement */
+        img {
+            transition: opacity 0.3s ease;
+        }
+
+            img[src=""], img:not([src]) {
+                opacity: 0;
+            }
+    </style>
+}
+
+<div class="admin-container">
+    <!-- Header Admin -->
+    <header class="admin-header">
+        <div class="admin-navbar">
+            <div class="admin-brand">
+                BEAUTY<span class="dot">.</span> Admin
+            </div>
+            <div class="admin-user-info">
+                <span class="admin-welcome">Bonjour, @Model.UserName!</span>
+                <a href="/Auth/Logout" class="admin-logout">
+                    <i class="bi bi-box-arrow-right"></i>Déconnexion
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Hero Section -->
+        <section class="admin-hero">
+            <h1>Tableau de Bord Administrateur</h1>
+            <p>Gérez vos produits cosmétiques avec style</p>
+            <button type="button" class="btn-add-product" data-bs-toggle="modal" data-bs-target="#createModal">
+                <i class="bi bi-plus-circle"></i>Nouveau Produit
+            </button>
+        </section>
+
+        <!-- Statistics -->
+        <div class="admin-stats">
+            <div class="stat-card total">
+                <div class="stat-number">@Model.TotalProducts</div>
+                <div class="stat-label">Produits Total</div>
+            </div>
+            <div class="stat-card low-stock">
+                <div class="stat-number">@Model.LowStockCount</div>
+                <div class="stat-label">Stock Faible</div>
+            </div>
+            <div class="stat-card out-of-stock">
+                <div class="stat-number">@Model.OutOfStockCount</div>
+                <div class="stat-label">Rupture de Stock</div>
+            </div>
+            <div class="stat-card value">
+                <div class="stat-number">@Model.TotalValue.ToString("C")</div>
+                <div class="stat-label">Valeur Totale</div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <section class="admin-products-section">
+            <div class="section-header">
+                <h2 class="section-title">Tous les Produits</h2>
+                <span class="products-count">@Model.Products.Count produits</span>
+            </div>
+
+            @if (Model.Products.Any())
+            {
+                <div class="products-grid">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                @if (!string.IsNullOrEmpty(product.ImageUrl) && product.ImageUrl != "Image" && product.ImageUrl != "In Action" && product.ImageUrl != "Bahn")
+                                {
+                                    <!-- Image avec gestion d'erreur -->
+                                    <img src="@GetValidImageUrl(product.ImageUrl)"
+                                         class="product-image"
+                                         alt="@product.Name"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="no-image" style="display: none;">
+                                        <i class="bi bi-image"></i>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="no-image">
+                                        <i class="bi bi-image"></i>
+                                        <span class="no-image-text">Aucune image</span>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="product-info">
+                                <h3 class="product-name">@product.Name</h3>
+                                <div class="product-details">
+                                    <div class="product-price">@product.Price.ToString("C")</div>
+                                    <div class="product-stock @(product.Quantity == 0 ? "stock-out" : product.Quantity <= 10 ? "stock-low" : "stock-ok")">
+                                        Stock: @product.Quantity unités
+                                    </div>
+                                </div>
+
+                                <div class="product-actions">
+                                    <button type="button" class="btn-edit"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editModal"
+                                            onclick="loadProduct(@product.Id, '@product.Name.Replace("'", "\\'")', @product.Price.ToString(System.Globalization.CultureInfo.InvariantCulture), @product.Quantity, '@product.ImageUrl.Replace("'", "\\'")')">
+                                        <i class="bi bi-pencil"></i>Modifier
+                                    </button>
+
+                                    <button type="button" class="btn-delete"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal"
+                                            onclick="setProductToDelete(@product.Id, '@product.Name.Replace("'", "\\'")')">
+                                        <i class="bi bi-trash"></i>Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-state">
+                    <i class="bi bi-inbox"></i>
+                    <h3>Aucun produit trouvé</h3>
+                    <p>Commencez par ajouter votre premier produit cosmétique</p>
+                    <button type="button" class="btn-add-product mt-3" data-bs-toggle="modal" data-bs-target="#createModal">
+                        <i class="bi bi-plus-circle"></i>Ajouter un produit
+                    </button>
+                </div>
+            }
+        </section>
+    </main>
+</div>
+
+<!-- AJOUTE LES MODALES AU DASHBOARD -->
+@await Html.PartialAsync("/Pages/Admin/Products/_EditModal.cshtml")
+@await Html.PartialAsync("/Pages/Admin/Products/_DeleteModal.cshtml")
+@await Html.PartialAsync("/Pages/Admin/Products/_CreateModal.cshtml")
+
+@section Scripts {
+    <script>
+        function loadProduct(id, name, price, quantity, imageUrl) {
+            document.getElementById('editProductId').value = id;
+            document.getElementById('editProductName').value = name;
+            document.getElementById('editProductPrice').value = price;
+            document.getElementById('editProductQuantity').value = quantity;
+            document.getElementById('editProductImageUrl').value = imageUrl || '';
+        }
+
+        function setProductToDelete(id, name) {
+            document.getElementById('deleteProductId').value = id;
+            document.getElementById('deleteProductName').textContent = name;
+        }
+
+        // Reset create form when modal is closed
+        document.getElementById('createModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('createProductForm').reset();
+        });
+
+        // Gestion améliorée du chargement des images
+        document.addEventListener('DOMContentLoaded', function() {
+            // Vérifier toutes les images
+            const images = document.querySelectorAll('.product-image');
+            images.forEach(img => {
+                // Si l'URL est invalide, masquer l'image et montrer le placeholder
+                if (!isValidImageUrl(img.src)) {
+                    img.style.display = 'none';
+                    const noImage = img.nextElementSibling;
+                    if (noImage && noImage.classList.contains('no-image')) {
+                        noImage.style.display = 'flex';
+                    }
+                }
+            });
+
+            // Afficher les messages TempData
+            const successMessage = '@TempData["Success"]';
+            const errorMessage = '@TempData["Error"]';
+
+            if (successMessage) {
+                showNotification(successMessage, 'success');
+            }
+            if (errorMessage) {
+                showNotification(errorMessage, 'error');
+            }
+        });
+
+        function isValidImageUrl(url) {
+            // Vérifier si l'URL est valide pour une image
+            return url &&
+                   !url.includes('Image') &&
+                   !url.includes('In Action') &&
+                   !url.includes('Bahn') &&
+                   url !== window.location.href;
+        }
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show`;
+            toast.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            toast.innerHTML = `
+                <strong>${type === 'success' ? 'Succès!' : 'Erreur!'}</strong> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => { toast.remove(); }, 5000);
+        }
+    </script>
+}
+
+@functions {
+    // Fonction helper pour obtenir des URLs d'image valides
+    public string GetValidImageUrl(string imageUrl)
+    {
+        if (string.IsNullOrEmpty(imageUrl) ||
+            imageUrl == "Image" ||
+            imageUrl == "In Action" ||
+            imageUrl == "Bahn")
+        {
+            return string.Empty;
+        }
+
+        // Si c'est une URL relative, l'ajouter au chemin de base
+        if (imageUrl.StartsWith("~/"))
+        {
+            return imageUrl.Replace("~/", "/");
+        }
+
+        return imageUrl;
+    }
+}

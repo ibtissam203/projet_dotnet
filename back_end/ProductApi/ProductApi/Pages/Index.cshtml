@@ -1,0 +1,208 @@
+﻿@page
+@model ProductApi.Pages.IndexModel
+
+@section Styles {
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #f8bbd9 0%, #f48fb1 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ec407a;
+            margin: 0.5rem 0;
+        }
+
+        .product-stock {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .stock-out {
+            color: #f44336;
+        }
+
+        .stock-low {
+            color: #ff9800;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            background: #f8bbd9;
+            border: none;
+            color: #c2185b;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .btn-add-cart:hover:not(:disabled) {
+                background: #f48fb1;
+                transform: translateY(-2px);
+            }
+
+            .btn-add-cart:disabled {
+                background: #ccc;
+                color: #666;
+                cursor: not-allowed;
+            }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            color: #333;
+            font-weight: 300;
+        }
+
+        /* Notification */
+        .alert-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+        }
+    </style>
+}
+
+<!-- Découvrez l'excellence de la beauté naturelle  -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">BEAUTY Cosmetics</h1>
+        <p class="lead mb-4">Découvrez l'excellence de la beauté naturelle</p>
+        <a href="#products" class="btn btn-light btn-lg">
+            <i class="bi bi-arrow-down me-2"></i>Découvrir
+        </a>
+    </div>
+</section>
+
+<!-- Affiche des messages temporaires (succès/erreurs) venant du serveur -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-fixed alert-dismissible fade show" role="alert">
+        <strong>✅</strong> @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-fixed alert-dismissible fade show" role="alert">
+        <strong>❌</strong> @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<!-- Section Produits -->
+<section class="container" id="products">
+    <h2 class="section-title">Nos Produits</h2>
+
+    <!--  Produits Disponibles -->
+    @if (Model.Products.Any())
+    {
+        <div class="product-grid">
+            @foreach (var product in Model.Products)
+            {
+                <div class="product-card">
+                    <img src="@product.ImageUrl"
+                         class="product-image"
+                         alt="@product.Name"
+                         onerror="this.src='/images/products/default-product.jpg'">
+
+                    <div class="product-info">
+                        <h5 class="product-name">@product.Name</h5>
+                        <div class="product-price">@product.Price.ToString("C")</div>
+                        <div class="product-stock @(product.Quantity == 0 ? "stock-out" : product.Quantity <= 10 ? "stock-low" : "")">
+                            @if (product.Quantity == 0)
+                            {
+                                <span><i class="bi bi-x-circle me-1"></i>Rupture de stock</span>
+                            }
+                            else if (product.Quantity <= 10)
+                            {
+                                <span><i class="bi bi-exclamation-triangle me-1"></i>Derniers articles !</span>
+                            }
+                            else
+                            {
+                                <span><i class="bi bi-check-circle me-1"></i>En stock</span>
+                            }
+                        </div>
+
+                        <button type="button"
+                                class="btn-add-cart"
+                                onclick="addToCart(@product.Id, '@product.Name.Replace("'", "\\'")', @product.Price.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture), '@product.ImageUrl')"
+                        @(product.Quantity == 0 ? "disabled" : "")>
+                            <i class="bi bi-cart-plus me-2"></i>
+                            @(product.Quantity == 0 ? "Indisponible" : "Ajouter au panier")
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    
+</section>
+
+@section Scripts {
+    <!--Charge ton fichier cart.js qui gère le panier via localStorage-->
+    <script src="~/js/cart.js"></script>
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            //Mise à jour du compteur panier
+            if (window.cartManager) {
+                cartManager.updateCartCount();
+            }
+            // Auto-fermer les alertes après 3 secondes
+            setTimeout(() => {
+                const alerts = document.querySelectorAll('.alert');
+                alerts.forEach(alert => {
+                    const bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                });
+            }, 3000);
+        });
+    </script>
+}

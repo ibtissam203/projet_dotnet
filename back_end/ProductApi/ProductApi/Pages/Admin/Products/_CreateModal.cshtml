@@ -1,0 +1,306 @@
+﻿<!-- Modal de création simplifiée -->
+<div class="modal fade modal-admin" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content admin-modal-content">
+            <div class="modal-header admin-modal-header">
+                <h5 class="modal-title" id="createModalLabel">
+                    <i class="bi bi-plus-circle me-2"></i>Nouveau Produit
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form method="post" asp-page-handler="Create" id="createProductForm" enctype="multipart/form-data">
+                <div class="modal-body admin-modal-body">
+                    <!-- Section Image -->
+                    <div class="mb-4">
+                        <label class="form-admin-label">Image du produit</label>
+
+                        <!-- Aperçu de l'image -->
+                        <div class="image-preview-container mb-3" id="imagePreviewContainer">
+                            <div class="image-preview-placeholder" id="imagePreviewPlaceholder">
+                                <i class="bi bi-image"></i>
+                                <span>Aucune image sélectionnée</span>
+                            </div>
+                            <img id="imagePreview" class="image-preview" style="display: none;">
+                        </div>
+
+                        <!-- Bouton de sélection de fichier -->
+                        <div class="file-upload-wrapper">
+                            <input type="file"
+                                   class="file-input"
+                                   id="createProductImageFile"
+                                   name="imageFile"
+                                   accept="image/*"
+                                   style="display: none;">
+                            <button type="button" class="btn-file-select" onclick="document.getElementById('createProductImageFile').click()">
+                                <i class="bi bi-folder2-open me-2"></i>Choisir une image
+                            </button>
+                            <span class="file-name" id="fileName">Aucun fichier choisi</span>
+                        </div>
+
+                        <!-- Alternative URL -->
+                        <div class="mt-2">
+                            <small class="text-muted">Ou entrez une URL :</small>
+                            <input type="url"
+                                   class="form-control form-admin-control mt-1"
+                                   id="createProductImageUrl"
+                                   name="imageUrl"
+                                   placeholder="https://example.com/image.jpg">
+                        </div>
+                    </div>
+
+                    <!-- Informations du produit -->
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="createProductName" class="form-admin-label">Nom du produit</label>
+                            <input type="text" class="form-control form-admin-control"
+                                   id="createProductName"
+                                   name="name"
+                                   required
+                                   placeholder="Ex: Rouge à lèvres glossy">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="createProductPrice" class="form-admin-label">Prix (€)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">€</span>
+                                <input type="number"
+                                       step="0.01"
+                                       min="0"
+                                       class="form-control form-admin-control"
+                                       id="createProductPrice"
+                                       name="price"
+                                       required
+                                       placeholder="0.00">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="createProductQuantity" class="form-admin-label">Quantité en stock</label>
+                            <input type="number"
+                                   class="form-control form-admin-control"
+                                   id="createProductQuantity"
+                                   name="quantity"
+                                   required
+                                   min="0"
+                                   placeholder="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer admin-modal-footer">
+                    <button type="button" class="btn btn-admin-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Annuler
+                    </button>
+                    <button type="submit" class="btn btn-admin-primary">
+                        <i class="bi bi-plus-circle me-2"></i>Créer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Styles simplifiés avec rose doux */
+    .modal-admin .admin-modal-content {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        background: white;
+    }
+
+    .modal-admin .admin-modal-header {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 1.25rem 1.5rem;
+        background: #fff5f7;
+    }
+
+    .modal-admin .modal-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+        color: #ec407a;
+    }
+
+    .modal-admin .admin-modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-admin .admin-modal-footer {
+        border-top: 1px solid #f0f0f0;
+        padding: 1.25rem 1.5rem;
+        background: #fafafa;
+    }
+
+    /* Aperçu de l'image */
+    .image-preview-container {
+        width: 100%;
+        height: 120px;
+        border: 2px dashed #ffb6c1;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #fffafb;
+    }
+
+    .image-preview-placeholder {
+        text-align: center;
+        color: #ffb6c1;
+    }
+
+        .image-preview-placeholder i {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    .image-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Bouton de sélection de fichier */
+    .file-upload-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-file-select {
+        background: #f8bbd9;
+        border: none;
+        color: #c2185b;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-file-select:hover {
+            background: #f48fb1;
+            transform: translateY(-1px);
+        }
+
+    .file-name {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    /* Champs de formulaire */
+    .form-admin-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .form-admin-control {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        color: #333;
+        padding: 10px 12px;
+        transition: all 0.3s ease;
+    }
+
+        .form-admin-control:focus {
+            background: white;
+            border-color: #f8bbd9;
+            box-shadow: 0 0 0 0.2rem rgba(248, 187, 217, 0.25);
+            color: #333;
+        }
+
+    /* Boutons */
+    .btn-admin-primary {
+        background: #f8bbd9;
+        border: none;
+        color: #c2185b;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-admin-primary:hover {
+            background: #f48fb1;
+            transform: translateY(-1px);
+        }
+
+    .btn-admin-secondary {
+        background: white;
+        border: 1px solid #e0e0e0;
+        color: #666;
+        padding: 8px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-admin-secondary:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
+    .input-group-text {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        color: #666;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('createProductImageFile');
+        const fileName = document.getElementById('fileName');
+        const imagePreview = document.getElementById('imagePreview');
+        const imagePreviewPlaceholder = document.getElementById('imagePreviewPlaceholder');
+        const imageUrlInput = document.getElementById('createProductImageUrl');
+
+        // Gestion du changement de fichier
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                fileName.textContent = file.name;
+
+                // Aperçu de l'image
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                    imagePreviewPlaceholder.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                resetImagePreview();
+            }
+        });
+
+        // Aperçu depuis l'URL
+        imageUrlInput.addEventListener('input', function() {
+            if (this.value) {
+                imagePreview.src = this.value;
+                imagePreview.style.display = 'block';
+                imagePreviewPlaceholder.style.display = 'none';
+                fileName.textContent = "Image depuis URL";
+            } else {
+                resetImagePreview();
+            }
+        });
+
+        function resetImagePreview() {
+            imagePreview.style.display = 'none';
+            imagePreviewPlaceholder.style.display = 'flex';
+            fileName.textContent = "Aucun fichier choisi";
+            fileInput.value = '';
+        }
+
+        // Reset quand la modal se ferme
+        document.getElementById('createModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('createProductForm').reset();
+            resetImagePreview();
+        });
+    });
+</script>

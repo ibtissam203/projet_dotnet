@@ -1,0 +1,349 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProductApi.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProductApi.xy7gokj6ls.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\admin-dashboard.css",
+      "PackagePath": "staticwebassets\\css\\admin-dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\layout.css",
+      "PackagePath": "staticwebassets\\css\\layout.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\90f28784-117c-4d71-a0f5-f44697ebaed0.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\90f28784-117c-4d71-a0f5-f44697ebaed0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\baume-teinte-levres-joues-juicy-berry-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\baume-teinte-levres-joues-juicy-berry-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\bronzeur-stick-baby-got-bronze-10-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\bronzeur-stick-baby-got-bronze-10-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\essence-brighten-up-banana-powder-20.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\essence-brighten-up-banana-powder-20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\fard-a-joues-liquide-joues-et-levres-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\fard-a-joues-liquide-joues-et-levres-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\gel-lifting-sourcil-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\gel-lifting-sourcil-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\istockphoto-1426212875-1024x1024.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\istockphoto-1426212875-1024x1024.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\palette-fard-a-paupieres-the-nude-10-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\palette-fard-a-paupieres-the-nude-10-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\palette-fard-a-paupieres-the-rose-20-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\palette-fard-a-paupieres-the-rose-20-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\poudre-libre-fixante-fix-last-14h-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\poudre-libre-fixante-fix-last-14h-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\primer-jelly-grip-hydrating-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\primer-jelly-grip-hydrating-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\rouge-a-levres-glossy-glaze-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\rouge-a-levres-glossy-glaze-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\images\\products\\super-fine-liner-pen-01-essence.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\super-fine-liner-pen-01-essence.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\js\\auth.js",
+      "PackagePath": "staticwebassets\\js\\auth.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\js\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Desktop\\annee3\\el_bouziri\\ProductApp\\back_end\\ProductApi\\ProductApi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProductApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProductApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ProductApi.props",
+      "PackagePath": "build\\ProductApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProductApi.props",
+      "PackagePath": "buildMultiTargeting\\ProductApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProductApi.props",
+      "PackagePath": "buildTransitive\\ProductApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
